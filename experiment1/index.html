@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Glitch-slug</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -25,18 +25,33 @@
 	<!-- Use me for a JavaScript OOP Project -->
 	<script type="text/javascript" src="./js/project.js" DEFER></script>
 	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+	<!--<script type="text/javascript" src="./js/sketch.js" DEFER></script>-->
 </head>
 <body>
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 1 - Hello Glitch/Generator</h1>
 
 			<div class="minor-section">
-				<div id="canvas-container">
-					<!-- canvas will be added here -->
+				<button id="clicker">NOM!</button>
+    			<div
+      				style="
+        			font-family: fantasy;
+        			border: thin solid black;
+        			padding: 1em;
+        			margin: 1em;
+        			box-shadow: 1px 1px 5px green;
+        			background: #ffe;
+					white-space: pre-wrap;
+					width: 600px;
+    				height: 400px;
+    				overflow-y: auto;
+      				"
+      				id="box"></div>
+					<h1>Translated from my <a href="https://glitch.com/~rawrr-sluggy-chaos">glitch.com</a>
+					</h1>
 				</div>
                 <div class="fullscreen-box">
                     <button id="fullscreen">Fullscreen</button>
@@ -45,17 +60,25 @@
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>What are you trying to acomplish with this experiment? 
+					My attempt is to create a text generator where it will generate different invitations from a slug.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>Describe in detail what you did technically and how it works? 
+					I went to glitch.com to remix bad-quest sample project. Then I editted the title, desciption and README, and replaced the fillers and the templates with my own subject. Afterwards, I integrated the code from my glitch in to my portfolio website, specifically into my experiment 1 file.
+					I did this by integrating the code from the html file from glitch to the index.html. I integrated the code from the js file to the main function in the project.js file. To make it function on my website, I had to edit box.innerText = story and clicker.onclick = generate to $("#box").text(story) and $("#clicker").click(generate).
+					To adjust the box, I added a white space, height and width in the button section in the index.html. 
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.
+					I worked on this by myself. I had a hard time with where to place the js glitch code in my own js file. I figured it out later. 
+					I had a difficult time understanding how to make the text indent, and how to adjust the box size for the majority of the project. 
+				</p>
 			</div>
 
 		</section>
