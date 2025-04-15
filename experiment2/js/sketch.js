@@ -117,7 +117,7 @@ function draw() {
   let sunX = width * ((random() + (scrub / 50 + millis() / 500000.0) / z) % 1);
   let sunZ = width / 13;
 
-  circle(sunX, 20, sunZ);
+  circle(sunX, 55, sunZ);
 
   
   // waves
@@ -135,7 +135,7 @@ function draw() {
     bubbleColor3
   ];
   
-  const bubbleCount = 60 * random();
+  const bubbleCount = 150 * random();
 
   // loop through color array to generate a set of bubbles for each color
   for (let c = 0; c < bubbleLayers.length; c++) {
@@ -146,7 +146,7 @@ function draw() {
       let z = random();
       let x = random(width);
       let y = random(height, height * ((random() + (scrubX + millis() / 500000.0) / z) % 1));
-      let r = random(15, 35);
+      let r = random(15, 50);
       
       // make the colors of the bubble lighter as they reach the surface
       let baseC = color(bubbleLayers[c]);
