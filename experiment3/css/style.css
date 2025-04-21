@@ -13,7 +13,7 @@ body {
     align-items: center;
 }
 
-#canvas-container {
+#canvasContainer, #canvasContainer1 {
     width: 100%;
     height: 600px;
 }

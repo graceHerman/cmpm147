@@ -13,10 +13,10 @@
 
 /* global generateGrid drawGrid */
 
-let s1 = function (p) {
+let s2 = function (p) {
   let seed = 0;
   let tilesetImage;
-  let currentGrid = [];
+  let currentGrid1 = [];
   let numRows, numCols;
 
   p.preload = function () {
@@ -26,20 +26,20 @@ let s1 = function (p) {
   };
 
   function reseed() {
-    seed = (seed | 0) + 1;
+    seed = (seed | 1) + 1109;
     p.randomSeed(seed);
     p.noiseSeed(seed);
-    p.select("#seedReport").html("seed " + seed);
+    p.select("#seedReport1").html("seed " + seed);
     regenerateGrid();
   }
 
   function regenerateGrid() {
-    p.select("#asciiBox").value(gridToString(generateGrid(p, numCols, numRows)));
+    p.select("#asciiBox1").value(gridToString(generateGrid1(p, numCols, numRows)));
     reparseGrid();
   }
 
   function reparseGrid() {
-    currentGrid = stringToGrid(p.select("#asciiBox").value());
+    currentGrid1 = stringToGrid(p.select("#asciiBox1").value());
   }
 
   function gridToString(grid) {
@@ -51,30 +51,31 @@ let s1 = function (p) {
   }
 
   p.setup = function () {
-    numCols = p.select("#asciiBox").attribute("rows") | 0;
-    numRows = p.select("#asciiBox").attribute("cols") | 0;
+    numCols = p.select("#asciiBox1").attribute("rows") | 0;
+    numRows = p.select("#asciiBox1").attribute("cols") | 0;
 
     let cnv = p.createCanvas(16 * numCols, 16 * numRows);
-    cnv.parent("canvasContainer");
+    cnv.parent("canvasContainer1");
     cnv.elt.getContext("2d").imageSmoothingEnabled = false;
 
-    p.select("#reseedButton").mousePressed(reseed);
-    p.select("#asciiBox").input(reparseGrid);
+    p.select("#reseedButton1").mousePressed(reseed);
+    p.select("#asciiBox1").input(reparseGrid);
 
     reseed();
   };
 
   p.draw = function () {
     p.randomSeed(seed);
-    drawGrid(p, currentGrid);
+    drawGrid1(p, currentGrid1);
   };
 
-  function placeTile(i, j, ti, tj) {
+  const generateGrid1 = window.generateGrid1;
+  const drawGrid1 = window.drawGrid1;
+
+  function placeTile1(i, j, ti, tj) {
     p.image(tilesetImage, 16 * j, 16 * i, 16, 16, 8 * ti, 8 * tj, 8, 8);
   }
-  window.placeTile = placeTile;
+  window.placeTile1 = placeTile1;
 };
 
-new p5(s1);
-
-
+new p5(s2);

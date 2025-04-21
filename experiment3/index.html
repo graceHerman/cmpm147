@@ -21,41 +21,88 @@
 	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
 	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
-    <script type="text/javascript" src="../js/site.js" DEFER></script>
+    <script type="text/javascript" src="../js/site.js" defer></script>
 	<!-- Use me for a JavaScript OOP Project -->
-	<script type="text/javascript" src="./js/project.js" DEFER></script>
+	<script type="text/javascript" src="./js/p2_solution.js" defer></script>
 	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+	<script type="text/javascript" src="./js/sketch.js" defer></script>
+	<script type="text/javascript" src="./js/p2_solution1.js" DEFER></script>
+	<script type="text/javascript" src="./js/sketch1.js" defer></script>
 </head>
 <body>
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 3 - Alternate Worlds</h1>
 
 			<div class="minor-section">
+				<h2>Overworld</h2>
 				<div id="canvas-container">
-					<!-- canvas will be added here -->
+					<!-- Canvas will be added here -->
+					<button id="reseedButton">reseed</button>
+					<span id="seedReport"></span>
+					<hr />
+					<span id="canvasContainer" style="margin: 10px;"></span> <!-- This is fine -->
+					<textarea cols="20" rows="20" id="asciiBox" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
 				</div>
-                <div class="fullscreen-box">
+				<h2>Dungeon</h2>
+				<div id="canvas-container1">
+					<!-- Canvas will be added here -->
+					<button id="reseedButton1">reseed</button>
+					<span id="seedReport1"></span>
+					<hr />
+					<span id="canvasContainer1" style="margin: 10px;"></span> <!-- This is fine -->
+					<textarea cols="20" rows="20" id="asciiBox1" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
+				</div>
+				<h1>Overworld translated from my <a href="http://glitch.com/~overworld-doom">glitch.com</a>
+				</h1>
+				<h1>Dungeon translated from my <a href="https://glitch.com/~spooky-dungeon">glitch.com</a>
+				</h1>
+				<div class="fullscreen-box">
                     <button id="fullscreen">Fullscreen</button>
                 </div>
 			</div>
+			
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>
+					</p>The overworld takes inspiration from The "Legend of Zelda: Link Between Worlds", of Lorule's overworld.
+					It gave me ispiration to do a dark themed overworld:</p>
+					<img src="./imag/img.jpg" width="500">
+					<p>The dungeon takes inspiration from The "Legend of Zelda: Link Between Worlds", of the dark temple in Lorule. 
+					This image is one of the rooms in the temple and gave me iniratin to do a dark themed dungeon:</p>
+					<img src="./imag/021.jpg" width="500">
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p> 
+					<p>The drawGrid function visualizes the grid using the placeTile function, and applies autotiling to create smoother transitions.
+					This function also applies visual effects, such as animated water bubbles.</p>
+					<p>Overworld<p>
+					</p>"~" for water<p>
+					</p>"," for plains<p>
+					</p>"." for grass<p>
+					</p>"^" for houses<p>
+					</p>"\*" for trees<p>
+					</p>Dungeon<p>
+					<p>"-" for background/grid
+					<p>"." for rooms<p>
+					<p>"=" for hallways<p>
+					<p>"\*" for chests<p>
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p> I worked n this by myself, and I think I did a good job. 
+					This experiment was fun, it was fun to mess around with the tiles, and to be creative with the design.
+					I did have a hard time understanding austotiling as it's not something I'm too familiar with. 
+					I do think that I could have made it look better, but I think this looks really good either way. 
+				</p>
 			</div>
 
 		</section>
