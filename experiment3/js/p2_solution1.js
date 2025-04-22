@@ -1,5 +1,10 @@
 /* exported generateGrid, drawGrid */
 /* global placeTile */
+// 
+// I did chatGPT how to implement two canvases that are the same for this scenario 
+// and it suggested each set (sketch.js and p2_solution.js)(sketch1.js and p2_solution1.js) have their own unique variables with their own cnvas containers
+// 
+// Dungeon
 
 function generateGrid1(p, numCols, numRows) {
     let grid = [];
@@ -90,10 +95,10 @@ function generateGrid1(p, numCols, numRows) {
   You might us an example like (northBit<<0)+(southBit<<1)+(eastBit<<2)+(westBit<<3).
   */
   function gridCode1(grid, i, j, target) {
-    let north = gridCheck1(grid, i - 1, j, target) ? 1 : 0;
-    let south = gridCheck1(grid, i + 1, j, target) ? 1 : 0;
-    let east = gridCheck1(grid, i, j + 1, target) ? 1 : 0;
-    let west = gridCheck1(grid, i, j - 1, target) ? 1 : 0;
+    let north = gridCheck1(grid, i, j-1, target);
+    let south = gridCheck1(grid, i, j+1, target);
+    let east = gridCheck1(grid, i+1, j, target);
+    let west = gridCheck1(grid, i-1, j, target);
   
     return (north << 0) + (south << 1) + (east << 2) + (west << 3);
   }
@@ -106,38 +111,35 @@ function generateGrid1(p, numCols, numRows) {
   */
   function drawContext1(grid, i, j, target, dti, dtj) {
     const code = gridCode1(grid, i, j, target);
-    const offset = lookup1[code];
-  
-    if (offset !== null) {
-      const [tiOffset, tjOffset] = offset;
-      placeTile1(i, j, dti + tiOffset, dtj + tjOffset);
-    }
+    const [tiOffset, tjOffset] = lookup[code];
+    placeTile1(i, j, dti + tiOffset, dtj + tjOffset);
   }
-  
+
   /*
   A global variable referring to an array of 16 elements. 
   Fill this with hand-typed tile offset pairs, e.g. [2,1], 
   so that drawContext does not need to handle any special cases.
   */
+  // I did ask a classmate, Gabe Ahrens to see his lookup and this is what he had
+  // credit goes to him Gabe Ahrens 
   const lookup1 = [
-    [0,0], // 0000 - no neighbors
-    [1,0], // 0001 - north
-    [2,0], // 0010 - south
-    [3,0], // 0011 - north + south
-    [0,1], // 0100 - east
-    [1,1], // 0101 - north + east
-    [2,1], // 0110 - south + east
-    [3,1], // 0111 - north + south + east
-    [0,2], // 1000 - west
-    [1,2], // 1001 - north + west
-    [2,2], // 1010 - south + west
-    [3,2], // 1011 - north + south + west
-    [0,3], // 1100 - east + west
-    [1,3], // 1101 - north + east + west
-    [2,3], // 1110 - south + east + west
-    [3,3], // 1111 - all four
+    [1,1],
+    [0,1],
+    [2,1],
+    [0,1],
+    [1,2], 
+    [0,2],
+    [2,2],
+    [0,0], 
+    [1,0],
+    [0,0],
+    [2,0],
+    [0,0],
+    [1,0],
+    [0,0], 
+    [0,0],
+    [0,0], 
   ];
-  
   
   function drawGrid1(p, grid) {
     p.background(128);
@@ -164,8 +166,7 @@ function generateGrid1(p, numCols, numRows) {
         // background
         else  {
           placeTile1(i, j, p.floor(p.random(2)), 9);
-          //drawContext(grid, i, j, ".", 9, 9);
-          drawContext1(grid, i, j, ".", 12, 9);
+          drawContext1(grid, i, j, ".", 9, 9);
         }
         
       }

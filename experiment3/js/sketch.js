@@ -8,6 +8,12 @@
 // Constants - User-servicable parts
 // In a longer project I like to put these in a separate file
 
+// 
+// I did chatGPT how to implement two canvases that are the same for this scenario 
+// and it suggested each set (sketch.js and p2_solution.js)(sketch1.js and p2_solution1.js) have their own unique variables with their own cnvas containers
+// For the sketch files, they should integrate a p5.js reference which is "p"
+// 
+
 // From glitch
 /* exported preload, setup, draw, placeTile */
 
