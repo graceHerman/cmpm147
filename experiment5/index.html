@@ -41,11 +41,8 @@
 				<h1>My Mutation Generation</h1>
 				<div id="container"></div>
 				<iframe src="https://evolutionary-impressionssss.glitch.me" frameborder="0" scrolling="yes" width="600" height="600"></iframe>
-				<h1>My parnter's generation</h1>
-				<img src="./imag/Gabe's.jpg" width="500">
 
 				<h1>Infinite world generator from my <a href="https://evolutionary-impressionssss.glitch.me">glitch.com</a></h1>
-				<h1>Infinite world generator from my partner: <a href="https://garegdoor.github.io/cmpm147/experiment4/index.html">glitch.com</a></h1>
 				<div class="fullscreen-box">
                     <button id="fullscreen">Fullscreen</button>
                 </div>
@@ -55,29 +52,38 @@
 			<div class="minor-section">
 				<h2>Description</h2>
 				<p>
-					</p>My partner, Gabe Ahrens, and I collaborated an idea of what we both should do for our world generator.
-					We thought of making a rock wall generator with small creatures crawling on it. 
-					This is the inspiring picture it's based off of:</p>
-					<img src="./imag/images.jpg" width="500">
+					</p>My partner, Gabe Ahrens, and I collaborated to brainstorm ideas. 
+					The idea I was going for was to create a pixel buffer of noise creating values of 0-1 and convert that to pixels of black to white, 
+					then each generation randomly pick a number of pixels to swap the values of based on the mutation slider 
+					and see if the resulting image is closer to the goal (requires black and white images) if not closer to the inspiration it reverts and tries again.
+					This is the image I was basing off of for the idea:</p>
+					<img src="./imag/Pixels.png" width="400">
+					</p>These images in this project are my own images. It's my dog, my cats, my toy discord wompus, and my toy slugs.</p>
+					<img src="./imag/May.png" width="300">
+					<img src="./imag/Doof.png" width="300">
+					<img src="./imag/SandJ.png" width="300">
+					<img src="./imag/ElsieandLola.png" width="300">
 				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p> 
-					<p> preloud function loads all of the images I drew</p> 
-					<p>spawnBugs functions sets the position and the speed of the bugs.</p>
-					<p>setup function sets up the snails positions and the drawBefore functions makes the snails slowly drift. </p>
-					<p>drawAfter function makes the bugs moves across the screen</p>
-					<p>drawTiles function generated the brick wall like world along with the snail image. It also places the images of the slugs, and has the clicks be slugs.</p>
+				<p>
+					<p>getInspiration function gets the images and its name, assetURL and credit.</p> 
+					<p>initDesign function creates the grayscale noise based pixel buffer, define and set the measurements and resiing the canvas.</p> 
+					<p>renderDesign function fills in the grayscale pixels with the grayscale colors and rectangular shapes, as well as comparing the pixels to the image's pictures.</p>
+					<p>mutateDesign function mutates the pixels based on the rate, the mutation slider, and swaps the pixels if the pixels are closer to the image's pixels.</p>
+					<p>mut function is a helper functions that helps with the mutation function. </p>
 				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p> I worked on this with a parnter, Gabe Ahrens. We ended up making our own versions of our inspirations. I felt like we did equal work on our own world generators. 
-					I was having more of a hard time making the slugs from the clicker appear on the wall. It kept hiding behind the tiles. I feel like I did okay on this assignment.
-					I wasn't feeling too well when I finished this project so I feel like I could have put more effort into it if I had more time, and if I didn't feel so unwell. 
+				<p> I worked on the brainstorming phase with a parnter, Gabe Ahrens. 
+					My partner, Gabe Ahrens, and I collaborated to brainstorm ideas. Then we gave each other a challenge to give each other one of the ideas. 
+					I was having more of a hard time getting the generator to mutate in the way I wanted it to where it was mutating the grayscale pixels. 
+					Overall, I feel like I did okay on this assignment. I have assignments from other classes that I've been delaying working on. 
+					I feel like I could have put more effort into it if I had more time. 
 				</p>
 			</div>
 
